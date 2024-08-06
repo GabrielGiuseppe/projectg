@@ -7,7 +7,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Mod("projectg")
+@Mod(ProjectGMod.MOD_ID)
 public class ProjectGMod {
 
     public static final String MOD_ID = "projectg";
