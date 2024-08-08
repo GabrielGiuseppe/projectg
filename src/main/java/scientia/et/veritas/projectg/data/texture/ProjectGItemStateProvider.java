@@ -6,7 +6,7 @@ import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import scientia.et.veritas.projectg.ProjectGMod;
-import scientia.et.veritas.projectg.itens.ItemCatalyst;
+import scientia.et.veritas.projectg.catalysts.ItemCatalyst;
 
 public class ProjectGItemStateProvider extends ItemModelProvider {
 
@@ -19,6 +19,9 @@ public class ProjectGItemStateProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         item(ItemCatalyst.PHILOSOPHERS_STONE_ITEM.get());
+        item(ItemCatalyst.NORMAL_TIER_LUCKY_BAG_ITEM.get());
+        item(ItemCatalyst.RARE_TIER_LUCKY_BAG_ITEM.get());
+        item(ItemCatalyst.EPIC_TIER_LUCKY_BAG_ITEM.get());
     }
 
     private void item(Item item){

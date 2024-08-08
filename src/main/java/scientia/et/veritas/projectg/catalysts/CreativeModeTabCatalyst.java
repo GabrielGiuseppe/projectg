@@ -1,4 +1,4 @@
-package scientia.et.veritas.projectg.creativemode.tab;
+package scientia.et.veritas.projectg.catalysts;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import scientia.et.veritas.projectg.ProjectGMod;
-import scientia.et.veritas.projectg.itens.ItemCatalyst;
+import scientia.et.veritas.projectg.catalysts.ItemCatalyst;
 
 import java.util.HashSet;
 import java.util.Set;

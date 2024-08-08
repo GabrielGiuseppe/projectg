@@ -1,4 +1,4 @@
-package scientia.et.veritas.projectg.itens;
+package scientia.et.veritas.projectg.itens.keyitens;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
