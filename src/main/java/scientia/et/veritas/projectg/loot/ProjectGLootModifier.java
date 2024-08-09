@@ -13,6 +13,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import scientia.et.veritas.projectg.ProjectGMod;
 import scientia.et.veritas.projectg.catalysts.ItemCatalyst;
 
+import java.util.Random;
 import java.util.function.Supplier;
 
 public class ProjectGLootModifier extends LootModifier {
@@ -27,8 +28,19 @@ public class ProjectGLootModifier extends LootModifier {
 
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        generatedLoot.add(new ItemStack(ItemCatalyst.NORMAL_TIER_LUCKY_BAG_ITEM.get()));
+        Random random = new Random();
+        int roll = random.nextInt(100) + 1;
+        var item = solveRoll(roll);
+        generatedLoot.add(item);
         return generatedLoot;
+    }
+
+    private ItemStack solveRoll(int roll) {
+        return roll <= 60 ?
+                new ItemStack(ItemCatalyst.NORMAL_TIER_LUCKY_BAG_ITEM.get()) :
+                roll <= 90 ?
+                        new ItemStack(ItemCatalyst.RARE_TIER_LUCKY_BAG_ITEM.get()) :
+                        new ItemStack(ItemCatalyst.EPIC_TIER_LUCKY_BAG_ITEM.get());
     }
 
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =

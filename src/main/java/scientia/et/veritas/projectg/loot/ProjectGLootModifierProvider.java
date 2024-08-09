@@ -3,6 +3,7 @@ package scientia.et.veritas.projectg.loot;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import scientia.et.veritas.projectg.ProjectGMod;
@@ -18,6 +19,9 @@ public class ProjectGLootModifierProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        add("my_loot_modifier", new ProjectGLootModifier(new LootItemCondition[]{}), List.of(new ModLoadedCondition("create")));
+        add("my_loot_modifier",
+                new ProjectGLootModifier(new LootItemCondition[]{
+                        LootItemRandomChanceCondition.randomChance(1f).build()
+                }));
     }
 }
